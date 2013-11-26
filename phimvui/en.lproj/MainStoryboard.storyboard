@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Pgj-0c-ROb">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Pane View Controller-->
+        <scene sceneID="vRb-JW-BUz">
+            <objects>
+                <viewController id="Pgj-0c-ROb" customClass="MSNavigationPaneViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MmZ-zP-EW6">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Vl-vQ-Jjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-235" y="-452"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="aLR-Aa-PBF">
+            <objects>
+                <viewController storyboardIdentifier="homeViewController" id="sRp-kG-dkx" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LhG-dR-gnB">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liu-bZ-8ef">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="RSo-6d-4bE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Push View">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingButtonPressed:" destination="sRp-kG-dkx" eventType="touchUpInside" id="Xkc-7M-Y3U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="liu-bZ-8ef" firstAttribute="top" secondItem="LhG-dR-gnB" secondAttribute="top" constant="220" id="Bkn-Ev-7wW"/>
+                            <constraint firstItem="liu-bZ-8ef" firstAttribute="leading" secondItem="LhG-dR-gnB" secondAttribute="leading" constant="122" id="IaU-aN-OkI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ysf-8Y-TXa"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="view" destination="LhG-dR-gnB" id="95q-1F-Rb7"/>
+                        <segue destination="HqW-ll-fPp" kind="push" identifier="settingSegue" id="RZR-Yk-FtI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xOo-2U-tJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-235" y="241"/>
+        </scene>
+        <!--Setting View Controller View Controller-->
+        <scene sceneID="1n7-gA-7wC">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" id="HqW-ll-fPp" customClass="SettingViewControllerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mHp-OC-cdJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="v0t-pX-Egc"/>
+                    <connections>
+                        <outlet property="view" destination="mHp-OC-cdJ" id="hAf-kv-8l0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="86L-ik-meB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="163" y="241"/>
+        </scene>
+        <!--Master View Controller-->
+        <scene sceneID="tGd-Be-aea">
+            <objects>
+                <viewController storyboardIdentifier="MasterViewController" id="OGo-ii-dxY" customClass="MSMasterViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rEb-PH-jYI">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="C4k-oS-lUo">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OGo-ii-dxY" id="eNE-ti-2vf"/>
+                                    <outlet property="delegate" destination="OGo-ii-dxY" id="9Yj-3u-eTS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C4k-oS-lUo" firstAttribute="trailing" secondItem="rEb-PH-jYI" secondAttribute="trailing" type="default" id="ca2-lI-ibb"/>
+                            <constraint firstItem="C4k-oS-lUo" firstAttribute="leading" secondItem="rEb-PH-jYI" secondAttribute="leading" type="default" id="g2K-sA-Yrp"/>
+                            <constraint firstItem="C4k-oS-lUo" firstAttribute="bottom" secondItem="rEb-PH-jYI" secondAttribute="bottom" type="default" id="gK2-S3-NbN"/>
+                            <constraint firstItem="C4k-oS-lUo" firstAttribute="top" secondItem="rEb-PH-jYI" secondAttribute="top" type="default" id="oUb-Hv-c17"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTableView" destination="C4k-oS-lUo" id="SLN-gs-Qs9"/>
+                        <outlet property="view" destination="rEb-PH-jYI" id="NB9-Qt-RTh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdl-mQ-rDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="163" y="-452"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="settingButtonPressed:"/>
+                <relationship kind="outlet" name="blurImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mainScrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="MSMasterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSMasterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MSNavigationPaneViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSNavigationPaneViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SettingViewControllerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewControllerViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

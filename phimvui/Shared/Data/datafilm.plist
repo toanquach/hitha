@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Menu</key>
+	<dict>
+		<key>Theloai</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Âm Nhạc</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Chiến Tranh</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Hài Hước</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Hành Động</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Hình Sự</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Hoạt Hình</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Khoa Học</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Kinh Dị</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Lãng Mạn</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Phiêu Lưu</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Tâm Lý</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Thần Thoại</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Thể Thao</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Viễn Tưởng</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Võ Thuật</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>TV Show</string>
+			</dict>
+		</array>
+		<key>Chuyenmuc</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Phim HOT</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Phim Lẻ</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Phim Bộ</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Phim Chiếu Rạp</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>

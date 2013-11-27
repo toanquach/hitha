@@ -7,6 +7,7 @@
 //
 
 #import "MSMasterViewController.h"
+#import "DataReader.h"
 
 NSString * const MSMasterViewControllerCellReuseIdentifier = @"MSMasterViewControllerCellReuseIdentifier";
 
@@ -21,7 +22,7 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType)
 @interface MSMasterViewController () <MSNavigationPaneViewControllerDelegate>
 {
     IBOutlet UITableView *myTableView;
-    
+    NSMutableDictionary *dictItems;
 }
 
 @property (nonatomic, strong) NSDictionary *paneViewControllerTitles;
@@ -78,6 +79,7 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType)
 
 - (void)initialize
 {
+    dictItems = [NSMutableDictionary dictionaryWithDictionary:[DataReader dictReadDataWithKey:kData_Menu]];
     self.paneViewControllerType = NSUIntegerMax;
     self.paneViewControllerTitles =
   @{
@@ -223,24 +225,28 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType)
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return MSMasterViewControllerTableViewSectionTypeCount;
+    return [dictItems.allKeys count];
+    //return MSMasterViewControllerTableViewSectionTypeCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0)
-    {
-        return [self.tableViewSectionBreaks[section] integerValue];
-    }
-    else
-    {
-        return ([self.tableViewSectionBreaks[section] integerValue] - [self.tableViewSectionBreaks[(section - 1)] integerValue]);
-    }
+    return [[dictItems objectForKey:[dictItems.allKeys objectAtIndex:section]] count];
+    
+//    if (section == 0)
+//    {
+//        return [self.tableViewSectionBreaks[section] integerValue];
+//    }
+//    else
+//    {
+//        return ([self.tableViewSectionBreaks[section] integerValue] - [self.tableViewSectionBreaks[(section - 1)] integerValue]);
+//    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return self.sectionTitles[@(section)];
+    return [dictItems.allKeys objectAtIndex:section];
+    //return self.sectionTitles[@(section)];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -250,14 +256,18 @@ typedef NS_ENUM(NSUInteger, MSMasterViewControllerTableViewSectionType)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MSMasterViewControllerCellReuseIdentifier];
     }
-    MSPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
-    cell.textLabel.text = self.paneViewControllerTitles[@(paneViewControllerType)];
+    NSArray *arr = [dictItems objectForKey:[dictItems.allKeys objectAtIndex:indexPath.section]];
+    NSDictionary *dict = [arr objectAtIndex:indexPath.row];
+    cell.textLabel.text = [dict objectForKey:@"name"];
+    
+    //MSPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
+    //cell.textLabel.text = self.paneViewControllerTitles[@(paneViewControllerType)];
     
     // Add a checkmark to the current pane type
-    if (self.paneViewControllerAppearanceTypes[@(paneViewControllerType)] && (self.navigationPaneViewController.appearanceType == [self.paneViewControllerAppearanceTypes[@(paneViewControllerType)] unsignedIntegerValue]))
-    {
-        cell.textLabel.text = [NSString stringWithFormat:@"✓ %@", cell.textLabel.text];
-    }
+//    if (self.paneViewControllerAppearanceTypes[@(paneViewControllerType)] && (self.navigationPaneViewController.appearanceType == [self.paneViewControllerAppearanceTypes[@(paneViewControllerType)] unsignedIntegerValue]))
+//    {
+//        cell.textLabel.text = [NSString stringWithFormat:@"✓ %@", cell.textLabel.text];
+//    }
     
     return cell;
 }

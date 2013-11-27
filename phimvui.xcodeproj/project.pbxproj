@@ -31,6 +31,7 @@
 		6A4595661844BAF900B63AE6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4595651844BAF900B63AE6 /* QuartzCore.framework */; };
 		6A4595681844BB3600B63AE6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4595671844BB3600B63AE6 /* Accelerate.framework */; };
 		6A45956B1844BC2300B63AE6 /* datafilm.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A45956A1844BC2300B63AE6 /* datafilm.plist */; };
+		6ACB4E0F1844F0750060CB3B /* DataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB4E0E1844F0750060CB3B /* DataReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,9 @@
 		6A4595651844BAF900B63AE6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6A4595671844BB3600B63AE6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		6A45956A1844BC2300B63AE6 /* datafilm.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = datafilm.plist; sourceTree = "<group>"; };
+		6ACB4E0D1844F0750060CB3B /* DataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataReader.h; sourceTree = "<group>"; };
+		6ACB4E0E1844F0750060CB3B /* DataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataReader.m; sourceTree = "<group>"; };
+		6ACB4E101844F38E0060CB3B /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 		6A45953A1844B9D000B63AE6 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				6ACB4E0A1844EEE60060CB3B /* CustomViews */,
 				6A45953B1844B9D000B63AE6 /* HomeControllers */,
 				6A45953E1844B9D000B63AE6 /* MSMasterViewController */,
 				6A4595411844B9D000B63AE6 /* SettingViewController */,
@@ -185,12 +190,13 @@
 		6A4595441844B9D000B63AE6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				6A45956C1844BC5B00B63AE6 /* Category */,
-				6A45956D1844BC5B00B63AE6 /* Utilities */,
+				6ACB4E0B1844F0600060CB3B /* Category */,
+				6ACB4E0C1844F0600060CB3B /* Utilities */,
 				6A4595691844BB9400B63AE6 /* Data */,
 				6A4595451844B9D000B63AE6 /* Assets */,
 				6A4595491844B9D000B63AE6 /* AssetsTest */,
 				6A45954B1844B9D000B63AE6 /* Fonts */,
+				6ACB4E101844F38E0060CB3B /* Define.h */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -276,16 +282,25 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		6A45956C1844BC5B00B63AE6 /* Category */ = {
+		6ACB4E0A1844EEE60060CB3B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		6ACB4E0B1844F0600060CB3B /* Category */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		6A45956D1844BC5B00B63AE6 /* Utilities */ = {
+		6ACB4E0C1844F0600060CB3B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				6ACB4E0D1844F0750060CB3B /* DataReader.h */,
+				6ACB4E0E1844F0750060CB3B /* DataReader.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -370,6 +385,7 @@
 				6A4595621844B9D100B63AE6 /* PRTweenTimingFunctions.m in Sources */,
 				6A4595631844B9D100B63AE6 /* UIImage+BlurredFrame.m in Sources */,
 				6A4595641844B9D100B63AE6 /* UIImage+ImageEffects.m in Sources */,
+				6ACB4E0F1844F0750060CB3B /* DataReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
